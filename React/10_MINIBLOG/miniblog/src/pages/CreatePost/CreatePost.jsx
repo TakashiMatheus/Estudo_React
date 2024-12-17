@@ -2,6 +2,7 @@ import style from "./CreatePost.module.css"
 import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
+import { useInsertDocument } from "../../hooks/useInsertDocument"
 
 
 const CreatePost = () => {
@@ -10,9 +11,35 @@ const CreatePost = () => {
     const [body, setBody] = useState("")
     const [tags, setTags] = useState([])
     const [formError, setFormError] = useState("")
+    const {user} = useAuthValue()
+
+    const {insertDocument, response} = useInsertDocument("posts")
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setFormError("")
+
+        // validate URL image
+        try{
+            new URL(img)
+        } catch(error) {
+            setFormError("A imagem precisa ser um URL.")
+        }
+
+        if(formError) return
+        // criar o arrray de tags
+
+        //checar todos os valores
+        insertDocument({
+            title, 
+            img,
+            body,
+            tags,
+            uid: user.uid,
+            createdBy: user.displayName
+        })
+
+        //redirect to home page
     }
 
     return(
@@ -37,10 +64,10 @@ const CreatePost = () => {
                     <span>Tags</span>
                     <input type="text" name="tags" required placeholder="Insira as tags separadas por vírgulas" onChange={(e) => setTags(e.target.value)} value={tags}/>
                 </label>
-                <button className="btn">Cadastrar</button>
-                {/* {!loading && <button className="btn">Cadastrar</button>}
-                {loading && <button className="btn" disabled>Aguarde...</button>}
-                {error && <p className="error">{error}</p>} */}
+                {!response.loading && <button className="btn">Cadastrar</button>}
+                {response.loading && <button className="btn" disabled>Aguarde...</button>}
+                {response.error && <p className="error">{response.error}</p>}
+                {formError && <p className="error">{formError}</p>}
             </form>
         </div>
     )
