@@ -1,0 +1,21 @@
+{
+    "products" : [
+        {
+            "id" : "1",
+            "name" : "Camisa Matuê",
+            "price" : "79"
+        },
+        
+        {
+            "id" : "2",
+            "name" : "Camisa 3 cães",
+            "price" : "89"
+        },
+        
+        {
+            "id" : "3",
+            "name" : "Camisa Polo",
+            "price" : "109,99"
+        }
+    ]
+}

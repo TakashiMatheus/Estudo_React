@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": "bf7f",
+      "name": "Capa de chuva",
+      "price": "99"
+    },
+    {
+      "id": "2345",
+      "name": "Capa de chuva",
+      "price": "99"
+    },
+    {
+      "id": "89c5",
+      "name": "cc",
+      "price": "12"
+    },
+    {
+      "id": "6176",
+      "name": "c",
+      "price": "123"
+    },
+    {
+      "id": "42e2",
+      "name": "232",
+      "price": "1111111"
+    },
+    {
+      "id": "f591",
+      "name": "123",
+      "price": "123123123"
+    },
+    {
+      "id": "7b79",
+      "name": "CUCU",
+      "price": "123"
+    },
+    {
+      "id": "c66a",
+      "name": "CUCU",
+      "price": "123"
+    },
+    {
+      "id": "2a73",
+      "name": "lambimia",
+      "price": "292929"
+    },
+    {
+      "id": "9c7a",
+      "name": "13123",
+      "price": "22232131231231231"
+    },
+    {
+      "id": "c0e0",
+      "name": "123123",
+      "price": "123123123123"
+    },
+    {
+      "id": "43bc",
+      "name": "awdawd",
+      "price": "123123123"
+    }
+  ]
+}
