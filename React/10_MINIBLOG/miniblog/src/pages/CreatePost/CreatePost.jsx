@@ -14,6 +14,7 @@ const CreatePost = () => {
     const {user} = useAuthValue()
 
     const {insertDocument, response} = useInsertDocument("posts")
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,20 +27,28 @@ const CreatePost = () => {
             setFormError("A imagem precisa ser um URL.")
         }
 
-        if(formError) return
         // criar o arrray de tags
+        const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase()) 
+
 
         //checar todos os valores
+        if(!title || !img || !tags || !body){
+            setFormError("Por favor preencha todos os campos!")
+        }
+
+
+        if(formError) return
         insertDocument({
             title, 
             img,
             body,
-            tags,
+            tagsArray,
             uid: user.uid,
             createdBy: user.displayName
         })
 
         //redirect to home page
+        navigate("/")
     }
 
     return(
