@@ -1,4 +1,27 @@
-.continer{
-  min-height: 60vh;
-  margin-bottom: 5em;
+html, body {
+  height: 100%; /* Garante que a altura total seja da tela */
+  margin: 0; /* Remove margens padrão */
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo verticalmente */
+}
+
+#root {
+  display: flex;
+  flex-direction: column; /* Layout principal em coluna */
+  min-height: 100vh; /* Garante altura mínima da tela */
+}
+
+.container {
+  flex: 1; /* Faz o conteúdo expandir para ocupar o espaço disponível */
+}
+
+footer {
+  height: 100px; /* Altura fixa para o rodapé */
+  background-color: #edf3f6;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  height: 250px;
 }

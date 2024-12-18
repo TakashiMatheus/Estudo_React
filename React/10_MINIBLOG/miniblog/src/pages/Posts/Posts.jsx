@@ -18,10 +18,7 @@ const Posts = () => {
                     <h3>Este post trata sobre:</h3>
                     <div className={styles.tags}>
                         {post.tagsArray.map((tag) => (
-                            <p key={tag}>
-                                <span>#</span>
-                                {tag}
-                            </p>
+                            <p key={tag}> <span>#</span>{tag}</p>
                         ))}
                     </div>
                 </>

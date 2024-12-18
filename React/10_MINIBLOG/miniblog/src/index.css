@@ -72,6 +72,10 @@ input, textarea {
     padding: 10px 15px;
     font-size: 1em;
 }
+.btn.btn-editar{
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
 
 .btn.btn-dark {
     background-color: #000;
