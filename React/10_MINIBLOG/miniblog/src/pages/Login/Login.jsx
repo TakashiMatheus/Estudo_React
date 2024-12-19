@@ -49,7 +49,7 @@ const Login = () => {
                 </label>
 
 
-                {!loading && <button className="btn">Cadastrar</button>}
+                {!loading && <button className="btn">Login</button>}
                 {loading && <button className="btn" disabled>Aguarde...</button>}
                 {error && <p className="error">{error}</p>}
             </form>
